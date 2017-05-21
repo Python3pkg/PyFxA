@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from __future__ import print_function
+
 import argparse
 import getpass
 import logging
@@ -66,7 +66,7 @@ def main(args=None):
     parser.add_argument('--env',
                         help='The Firefox Account env to use',
                         dest='env',
-                        choices=ENVIRONMENT_URLS.keys(),
+                        choices=list(ENVIRONMENT_URLS.keys()),
                         default=DEFAULT_ENV,
                         required=False)
     parser.add_argument('--account-server',

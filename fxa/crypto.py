@@ -101,7 +101,7 @@ def verify_hmac(key, data, signature):
 def xor(data1, data2):
     if len(data1) != len(data2):
         raise ValueError("cannot xor strings of different length")
-    bs = (ord(data1[i:i+1]) ^ ord(data2[i:i+1]) for i in xrange(len(data1)))
+    bs = (ord(data1[i:i+1]) ^ ord(data2[i:i+1]) for i in range(len(data1)))
     return b"".join(int2byte(b) for b in bs)
 
 

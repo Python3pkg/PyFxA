@@ -1,7 +1,7 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this file,
 # You can obtain one at http://mozilla.org/MPL/2.0/.
-from __future__ import unicode_literals
+
 import os
 import re
 from binascii import unhexlify
@@ -39,11 +39,11 @@ class TestCoreCrypto(unittest.TestCase):
 
     def test_password_stretching_and_key_derivation(self):
         # These are the test vectors from the onepw protocol document.
-        email = u"andr\xe9@example.org"
+        email = "andr\xe9@example.org"
         self.assertEqual(email.encode("utf8"), dehexlify("""
             616e6472c3a94065 78616d706c652e6f 7267
         """))
-        pwd = u"p\xe4ssw\xf6rd"
+        pwd = "p\xe4ssw\xf6rd"
         self.assertEqual(pwd.encode("utf8"), dehexlify("""
             70c3a4737377c3b6 7264
         """))
